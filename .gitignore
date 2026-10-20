@@ -1,0 +1,30 @@
+# --- Claude Code: personal / machine-local ---
+CLAUDE.local.md
+.claude/settings.local.json
+.claude/agent-memory-local/
+.claude/logs/
+context-pack.*.md
+
+# --- Secrets ---
+.env
+.env.*
+!.env.example
+
+# --- OS / editor ---
+.DS_Store
+*.swp
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# TODO(stub): stack-specific ignores (node_modules/, dist/, .next/, __pycache__/, .venv/, ...)
+node_modules/
+.next/
+app/data/outbox.json
+__pycache__/
+.env
+.env.local
+node_modules/
+.next/
+app/data/outbox.json
+__pycache__/

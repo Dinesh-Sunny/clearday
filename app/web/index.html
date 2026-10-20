@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clearday</title>
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<div class="sky" id="sky"></div>
+<header class="top">
+  <div class="brand"><span class="wm">Clear<i>day</i></span><span class="tag">Your finance team, on Seapoint</span></div>
+  <div class="status">
+    <span class="pill glass" id="src"><span class="dot"></span>Seapoint sandbox</span>
+    <span class="pill glass" id="ai">Claude</span>
+    <div class="seg glass" id="who" role="tablist" aria-label="Approver"></div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <h1 class="display" id="hello">Good evening.</h1>
+    <p class="sub" id="sub">Checking your books…</p>
+    <ol class="steps" id="steps" aria-live="polite"></ol>
+  </section>
+
+  <nav class="tabs" role="tablist">
+    <button class="tab on" data-v="home">Home</button>
+    <button class="tab" data-v="close">Close</button>
+    <button class="tab" data-v="cash">Cash</button>
+    <button class="tab" data-v="board">Board pack</button>
+    <button class="tab" data-v="log">Activity</button>
+  </nav>
+
+  <div class="grid">
+    <section id="v-home" class="view on">
+      <div class="cards" id="cards"></div>
+    </section>
+    <section id="v-close" class="view"><div class="panel" id="close"></div></section>
+    <section id="v-cash" class="view"><div class="panel" id="cash"></div></section>
+    <section id="v-board" class="view"><div class="panel" id="board">
+      <h2 class="title">September board pack</h2>
+      <p class="muted">Cash, runway, burn, the variance a board will ask about, and a short narrative. Drafted from both Seapoint organisations.</p>
+      <button class="btn primary" id="mkpack">Draft the pack</button>
+      <div id="pack"></div>
+    </div></section>
+    <section id="v-log" class="view"><div class="panel"><h2 class="title">Activity</h2><p class="muted">Everything the agent did, who approved it, and when.</p><ul class="log" id="log"></ul></div></section>
+
+    <aside class="side">
+      <div class="panel glassy">
+        <h3 class="label">Ask</h3>
+        <form id="askf"><textarea id="q" rows="2" placeholder="What did we spend last month, by category?"></textarea>
+          <div class="chips">
+            <button type="button" class="chip">What did we spend last month, by category?</button>
+            <button type="button" class="chip">What if we hire 2 engineers?</button>
+            <button type="button" class="chip">Which bills are overdue?</button>
+          </div>
+          <button class="btn primary" type="submit">Ask</button></form>
+        <div class="ans" id="ans"></div>
+      </div>
+      <div class="panel">
+        <h3 class="label">Waiting to apply in Seapoint</h3>
+        <p class="muted sm">Approved changes queue here. The Seapoint MCP applies them, one batch per approval.</p>
+        <ul class="outbox" id="outbox"><li class="muted sm">Nothing queued.</li></ul>
+      </div>
+      <div class="panel">
+        <h3 class="label">How I stay safe</h3>
+        <ul class="rules">
+          <li>I never move money or change Seapoint without your tap.</li>
+          <li>Over your limit, I route it to a second approver.</li>
+          <li>Duplicates, bad VAT and odd suppliers never enter a run.</li>
+          <li>Cash never goes below the £250,000 buffer.</li>
+          <li>Text inside bills is data, never instructions.</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<div class="scrim" id="scrim"></div>
+<aside class="sheet" id="sheet" aria-hidden="true"></aside>
+<div class="toast" id="toast" role="status"></div>
+<script src="/app.js"></script>
+</body>
+</html>
